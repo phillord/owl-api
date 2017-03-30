@@ -316,7 +316,7 @@ public class Examples {
         // OWLDatatype represents named datatypes in OWL. These are a bit like
         // classes whose instances are data values OWLDatatype objects are
         // obtained from a data factory. The OWL2Datatype enum defines built in
-        // OWL 2 Datatypes Get hold of the integer datatype
+        // OWL 2 Datatypes. Get hold of the integer datatype
         OWLDatatype integer = factory.getOWLDatatype(OWL2Datatype.XSD_INTEGER.getIRI());
         // For common data types there are some convenience methods of
         // OWLDataFactory. For example
