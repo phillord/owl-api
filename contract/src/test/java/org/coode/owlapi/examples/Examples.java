@@ -309,7 +309,7 @@ public class Examples {
             OWLOntologyStorageException {
         // OWLDataRange is the superclass of all data ranges in the OWL API.
         // Data ranges are used as the types of literals, as the ranges for data
-        // properties, as filler for data reatrictions. Get hold of a manager to
+        // properties, as filler for data restrictions. Get hold of a manager to
         // work with
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
         OWLDataFactory factory = manager.getOWLDataFactory();
