@@ -314,7 +314,7 @@ public class Examples {
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
         OWLDataFactory factory = manager.getOWLDataFactory();
         // OWLDatatype represents named datatypes in OWL. These are a bit like
-        // classes whose instances are data values OWLDatatype objects are
+        // classes whose instances are data values OWLDatatype objects 
         // obtained from a data factory. The OWL2Datatype enum defines built in
         // OWL 2 Datatypes. Get hold of the integer datatype
         OWLDatatype integer = factory.getOWLDatatype(OWL2Datatype.XSD_INTEGER.getIRI());
@@ -324,13 +324,13 @@ public class Examples {
         OWLDatatype floatDatatype = factory.getFloatOWLDatatype();
         OWLDatatype doubleDatatype = factory.getDoubleOWLDatatype();
         OWLDatatype booleanDatatype = factory.getBooleanOWLDatatype();
-        // The top datatype (analgous to owl:Thing) is rdfs:Literal, which can
+        // The top datatype (analogous to owl:Thing) is rdfs:Literal, which can
         // be obtained from the data factory
         OWLDatatype rdfsLiteral = factory.getTopDatatype();
         // Custom data ranges can be built up from these basic datatypes. For
         // example, it is possible to restrict a datatype using facets from XML
         // Schema Datatypes. For example, lets create a data range that
-        // describes integers that are greater or equal to 18 To do this, we
+        // describes integers that are greater or equal to 18. To do this, we
         // restrict the xsd:integer datatype using the xsd:minInclusive facet
         // with a value of 18. Get hold of a literal that is an integer value 18
         OWLLiteral eighteen = factory.getOWLLiteral(18);
