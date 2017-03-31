@@ -506,7 +506,7 @@ public class Examples {
         // from the URL corresponding to the ontology IRI, which represents the
         // ontology. In order to have a concrete representation of an ontology
         // (e.g. an RDF/XML file), we MAP the ontology IRI to a PHYSICAL URI. We
-        // do this using an IRIMapper Let's create an ontology and name it
+        // do this using an IRIMapper. Let's create an ontology and name it
         // "http://www.co-ode.org/ontologies/testont.owl" We need to set up a
         // mapping which points to a concrete file where the ontology will be
         // stored. (It's good practice to do this even if we don't intend to
