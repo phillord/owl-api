@@ -464,7 +464,7 @@ public class Examples {
     @Test
     public void shouldLoadAndSave() throws OWLOntologyCreationException,
             OWLOntologyStorageException, IOException {
-        // A simple example of how to load and save an ontology We first need to
+        // A simple example of how to load and save an ontology. We first need to
         // obtain a copy of an OWLOntologyManager, which, as the name suggests,
         // manages a set of ontologies. An ontology is unique within an ontology
         // manager. Each ontology knows its ontology manager. To load multiple
