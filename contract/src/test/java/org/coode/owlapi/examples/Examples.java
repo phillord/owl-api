@@ -984,7 +984,7 @@ public class Examples {
         // Vegetarians are defined in the ontology to be animals that don't eat
         // animals or parts of animals.
         OWLDataFactory fac = manager.getOWLDataFactory();
-        // Get a reference to the vegetarian class so that we can as the
+        // Get a reference to the vegetarian class so that we can ask the
         // reasoner about it. The full IRI of this class happens to be:
         // <http://owl.man.ac.uk/2005/07/sssw/people#vegetarian>
         OWLClass veggy = fac.getOWLClass(IRI
