@@ -988,7 +988,7 @@ public class Examples {
         // reasoner about it. The full IRI of this class happens to be:
         // <http://owl.man.ac.uk/2005/07/sssw/people#vegetarian>
         OWLClass veggy = fac.getOWLClass(IRI
-                .create("http://owl.man.ac.uk/2005/07/sssw/people#vegetarian"));
+                .create("http://owl.man.ac.uk/2006/07/sssw/people#vegetarian"));
         // Now use the reasoner to obtain the subclasses of vegetarian. We can
         // ask for the direct subclasses of vegetarian or all of the (proper)
         // subclasses of vegetarian. In this case we just want the direct ones
@@ -1021,7 +1021,7 @@ public class Examples {
         // <http://owl.man.ac.uk/2005/07/sssw/people#pet> We need to obtain a
         // reference to this class so that we can ask the reasoner about it.
         OWLClass country = fac.getOWLClass(IRI
-                .create("http://owl.man.ac.uk/2005/07/sssw/people#pet"));
+                .create("http://owl.man.ac.uk/2006/07/sssw/people#pet"));
         // Ask the reasoner for the instances of pet
         NodeSet<OWLNamedIndividual> individualsNodeSet = reasoner.getInstances(country,
                 true);
@@ -1042,11 +1042,11 @@ public class Examples {
         // <http://owl.man.ac.uk/2005/07/sssw/people#Mick> Get a reference to
         // the individual Mick
         OWLNamedIndividual mick = fac.getOWLNamedIndividual(IRI
-                .create("http://owl.man.ac.uk/2005/07/sssw/people#Mick"));
+                .create("http://owl.man.ac.uk/2006/07/sssw/people#Mick"));
         // Let's get the pets of Mick Get hold of the has_pet property which has
         // a full IRI of <http://owl.man.ac.uk/2005/07/sssw/people#has_pet>
         OWLObjectProperty hasPet = fac.getOWLObjectProperty(IRI
-                .create("http://owl.man.ac.uk/2005/07/sssw/people#has_pet"));
+                .create("http://owl.man.ac.uk/2006/07/sssw/people#has_pet"));
         // Now ask the reasoner for the has_pet property values for Mick
         NodeSet<OWLNamedIndividual> petValuesNodeSet = reasoner.getObjectPropertyValues(
                 mick, hasPet);
