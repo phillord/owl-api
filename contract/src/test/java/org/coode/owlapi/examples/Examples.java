@@ -919,7 +919,7 @@ public class Examples {
         OWLOntology ont = manager.loadOntologyFromOntologyDocument(docIRI);
         System.out.println("Loaded " + ont.getOntologyID());
         // We need to create an instance of OWLReasoner. An OWLReasoner provides
-        // the basic query functionality that we need, for example the ability
+        // the basic query functionality that we need, for example the ability to
         // obtain the subclasses of a class etc. To do this we use a reasoner
         // factory. Create a reasoner factory. In this case, we will use HermiT,
         // but we could also use FaCT++ (http://code.google.com/p/factplusplus/)
@@ -987,15 +987,15 @@ public class Examples {
         // Get a reference to the vegetarian class so that we can as the
         // reasoner about it. The full IRI of this class happens to be:
         // <http://owl.man.ac.uk/2005/07/sssw/people#vegetarian>
-        OWLClass vegPizza = fac.getOWLClass(IRI
+        OWLClass veggy = fac.getOWLClass(IRI
                 .create("http://owl.man.ac.uk/2005/07/sssw/people#vegetarian"));
         // Now use the reasoner to obtain the subclasses of vegetarian. We can
         // ask for the direct subclasses of vegetarian or all of the (proper)
         // subclasses of vegetarian. In this case we just want the direct ones
         // (which we specify by the "true" flag).
-        NodeSet<OWLClass> subClses = reasoner.getSubClasses(vegPizza, true);
+        NodeSet<OWLClass> subClses = reasoner.getSubClasses(veggy, true);
         // The reasoner returns a NodeSet, which represents a set of Nodes. Each
-        // node in the set represents a subclass of vegetarian pizza. A node of
+        // node in the set represents a subclass of vegetarian animal. A node of
         // classes contains classes, where each class in the node is equivalent.
         // For example, if we asked for the subclasses of some class A and got
         // back a NodeSet containing two nodes {B, C} and {D}, then A would have
