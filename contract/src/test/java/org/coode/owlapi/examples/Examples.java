@@ -909,7 +909,7 @@ public class Examples {
      * @throws OWLOntologyCreationException */
     @Test
     public void shouldUseReasoner() throws OWLOntologyCreationException {
-        String DOCUMENT_IRI = "http://owl.cs.manchester.ac.uk/repository/download?ontology=file:/Users/seanb/Desktop/Cercedilla2005/hands-on/people.owl&format=RDF/XML";
+        String DOCUMENT_IRI = "http://owl.man.ac.uk/2006/07/sssw/people.owl";
         // Create our ontology manager in the usual way.
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
         // Load a copy of the people+pets ontology. We'll load the ontology from
