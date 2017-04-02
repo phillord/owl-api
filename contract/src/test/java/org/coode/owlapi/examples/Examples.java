@@ -309,14 +309,14 @@ public class Examples {
             OWLOntologyStorageException {
         // OWLDataRange is the superclass of all data ranges in the OWL API.
         // Data ranges are used as the types of literals, as the ranges for data
-        // properties, as filler for data reatrictions. Get hold of a manager to
+        // properties, as filler for data restrictions. Get hold of a manager to
         // work with
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
         OWLDataFactory factory = manager.getOWLDataFactory();
         // OWLDatatype represents named datatypes in OWL. These are a bit like
-        // classes whose instances are data values OWLDatatype objects are
+        // classes whose instances are data values OWLDatatype objects 
         // obtained from a data factory. The OWL2Datatype enum defines built in
-        // OWL 2 Datatypes Get hold of the integer datatype
+        // OWL 2 Datatypes. Get hold of the integer datatype
         OWLDatatype integer = factory.getOWLDatatype(OWL2Datatype.XSD_INTEGER.getIRI());
         // For common data types there are some convenience methods of
         // OWLDataFactory. For example
@@ -324,13 +324,13 @@ public class Examples {
         OWLDatatype floatDatatype = factory.getFloatOWLDatatype();
         OWLDatatype doubleDatatype = factory.getDoubleOWLDatatype();
         OWLDatatype booleanDatatype = factory.getBooleanOWLDatatype();
-        // The top datatype (analgous to owl:Thing) is rdfs:Literal, which can
+        // The top datatype (analogous to owl:Thing) is rdfs:Literal, which can
         // be obtained from the data factory
         OWLDatatype rdfsLiteral = factory.getTopDatatype();
         // Custom data ranges can be built up from these basic datatypes. For
         // example, it is possible to restrict a datatype using facets from XML
         // Schema Datatypes. For example, lets create a data range that
-        // describes integers that are greater or equal to 18 To do this, we
+        // describes integers that are greater or equal to 18. To do this, we
         // restrict the xsd:integer datatype using the xsd:minInclusive facet
         // with a value of 18. Get hold of a literal that is an integer value 18
         OWLLiteral eighteen = factory.getOWLLiteral(18);
@@ -464,7 +464,7 @@ public class Examples {
     @Test
     public void shouldLoadAndSave() throws OWLOntologyCreationException,
             OWLOntologyStorageException, IOException {
-        // A simple example of how to load and save an ontology We first need to
+        // A simple example of how to load and save an ontology. We first need to
         // obtain a copy of an OWLOntologyManager, which, as the name suggests,
         // manages a set of ontologies. An ontology is unique within an ontology
         // manager. Each ontology knows its ontology manager. To load multiple
@@ -506,7 +506,7 @@ public class Examples {
         // from the URL corresponding to the ontology IRI, which represents the
         // ontology. In order to have a concrete representation of an ontology
         // (e.g. an RDF/XML file), we MAP the ontology IRI to a PHYSICAL URI. We
-        // do this using an IRIMapper Let's create an ontology and name it
+        // do this using an IRIMapper. Let's create an ontology and name it
         // "http://www.co-ode.org/ontologies/testont.owl" We need to set up a
         // mapping which points to a concrete file where the ontology will be
         // stored. (It's good practice to do this even if we don't intend to
@@ -909,7 +909,7 @@ public class Examples {
      * @throws OWLOntologyCreationException */
     @Test
     public void shouldUseReasoner() throws OWLOntologyCreationException {
-        String DOCUMENT_IRI = "http://owl.cs.manchester.ac.uk/repository/download?ontology=file:/Users/seanb/Desktop/Cercedilla2005/hands-on/people.owl&format=RDF/XML";
+        String DOCUMENT_IRI = "http://owl.man.ac.uk/2006/07/sssw/people.owl";
         // Create our ontology manager in the usual way.
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
         // Load a copy of the people+pets ontology. We'll load the ontology from
@@ -919,7 +919,7 @@ public class Examples {
         OWLOntology ont = manager.loadOntologyFromOntologyDocument(docIRI);
         System.out.println("Loaded " + ont.getOntologyID());
         // We need to create an instance of OWLReasoner. An OWLReasoner provides
-        // the basic query functionality that we need, for example the ability
+        // the basic query functionality that we need, for example the ability to
         // obtain the subclasses of a class etc. To do this we use a reasoner
         // factory. Create a reasoner factory. In this case, we will use HermiT,
         // but we could also use FaCT++ (http://code.google.com/p/factplusplus/)
@@ -984,18 +984,18 @@ public class Examples {
         // Vegetarians are defined in the ontology to be animals that don't eat
         // animals or parts of animals.
         OWLDataFactory fac = manager.getOWLDataFactory();
-        // Get a reference to the vegetarian class so that we can as the
+        // Get a reference to the vegetarian class so that we can ask the
         // reasoner about it. The full IRI of this class happens to be:
         // <http://owl.man.ac.uk/2005/07/sssw/people#vegetarian>
-        OWLClass vegPizza = fac.getOWLClass(IRI
-                .create("http://owl.man.ac.uk/2005/07/sssw/people#vegetarian"));
+        OWLClass veggy = fac.getOWLClass(IRI
+                .create("http://owl.man.ac.uk/2006/07/sssw/people#vegetarian"));
         // Now use the reasoner to obtain the subclasses of vegetarian. We can
         // ask for the direct subclasses of vegetarian or all of the (proper)
         // subclasses of vegetarian. In this case we just want the direct ones
         // (which we specify by the "true" flag).
-        NodeSet<OWLClass> subClses = reasoner.getSubClasses(vegPizza, true);
+        NodeSet<OWLClass> subClses = reasoner.getSubClasses(veggy, true);
         // The reasoner returns a NodeSet, which represents a set of Nodes. Each
-        // node in the set represents a subclass of vegetarian pizza. A node of
+        // node in the set represents a subclass of vegetarian animal. A node of
         // classes contains classes, where each class in the node is equivalent.
         // For example, if we asked for the subclasses of some class A and got
         // back a NodeSet containing two nodes {B, C} and {D}, then A would have
@@ -1021,7 +1021,7 @@ public class Examples {
         // <http://owl.man.ac.uk/2005/07/sssw/people#pet> We need to obtain a
         // reference to this class so that we can ask the reasoner about it.
         OWLClass country = fac.getOWLClass(IRI
-                .create("http://owl.man.ac.uk/2005/07/sssw/people#pet"));
+                .create("http://owl.man.ac.uk/2006/07/sssw/people#pet"));
         // Ask the reasoner for the instances of pet
         NodeSet<OWLNamedIndividual> individualsNodeSet = reasoner.getInstances(country,
                 true);
@@ -1042,11 +1042,11 @@ public class Examples {
         // <http://owl.man.ac.uk/2005/07/sssw/people#Mick> Get a reference to
         // the individual Mick
         OWLNamedIndividual mick = fac.getOWLNamedIndividual(IRI
-                .create("http://owl.man.ac.uk/2005/07/sssw/people#Mick"));
+                .create("http://owl.man.ac.uk/2006/07/sssw/people#Mick"));
         // Let's get the pets of Mick Get hold of the has_pet property which has
         // a full IRI of <http://owl.man.ac.uk/2005/07/sssw/people#has_pet>
         OWLObjectProperty hasPet = fac.getOWLObjectProperty(IRI
-                .create("http://owl.man.ac.uk/2005/07/sssw/people#has_pet"));
+                .create("http://owl.man.ac.uk/2006/07/sssw/people#has_pet"));
         // Now ask the reasoner for the has_pet property values for Mick
         NodeSet<OWLNamedIndividual> petValuesNodeSet = reasoner.getObjectPropertyValues(
                 mick, hasPet);
